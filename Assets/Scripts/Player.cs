@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private int worldIndex = -1; //-1 is physical, 1 is spirit
     public float worldCenter;
     private Animator animator;
+    private bool moving;
+    private Vector2 lastMove;
 
     // Use this for initialization
     void Start()
@@ -19,8 +21,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0.0f));
-        animator.SetFloat("Moving", Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0 ? 1.0f : 0.0f);
+        moving = false;
+        if (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f)
+        {
+            transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0.0f));
+            moving = true;
+            lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }        
+        animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        animator.SetFloat("LastMoveX", lastMove.x);
+        animator.SetFloat("LastMoveY", lastMove.y);
+        animator.SetBool("Moving", moving);
 
         if (Input.GetMouseButtonDown(1))
         {
