@@ -1,45 +1,45 @@
 fileFormatVersion: 2
-guid: 64fa9986a293dd54ab41ffcb4dcf8a77
-timeCreated: 1524836362
+guid: b431f29faa0279544a86a7311ed49c1e
+timeCreated: 1524841095
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bLINK espada_0
-    21300002: bLINK espada_1
-    21300004: bLINK espada_2
-    21300006: bLINK espada_3
-    21300008: bLINK espada_4
-    21300010: bLINK espada_5
-    21300012: bLINK espada_6
-    21300014: bLINK espada_7
-    21300016: bLINK espada_8
-    21300018: bLINK espada_9
-    21300020: bLINK espada_10
-    21300022: bLINK espada_11
-    21300024: bLINK espada_12
-    21300026: bLINK espada_13
-    21300028: bLINK espada_14
-    21300030: bLINK espada_15
-    21300032: bLINK espada_16
-    21300034: bLINK espada_17
-    21300036: bLINK espada_18
-    21300038: bLINK espada_19
-    21300040: bLINK espada_20
-    21300042: bLINK espada_21
-    21300044: bLINK espada_22
-    21300046: bLINK espada_23
-    21300048: bLINK espada_24
-    21300050: bLINK espada_25
-    21300052: bLINK espada_26
-    21300054: bLINK espada_27
-    21300056: bLINK espada_28
-    21300058: bLINK espada_29
-    21300060: bLINK espada_30
-    21300062: bLINK espada_31
-    21300064: bLINK espada_32
-    21300066: bLINK espada_33
-    21300068: bLINK espada_34
-    21300070: bLINK espada_35
+    21300000: Blink_Sword_3_0
+    21300002: Blink_Sword_3_1
+    21300004: Blink_Sword_3_2
+    21300006: Blink_Sword_3_3
+    21300008: Blink_Sword_3_4
+    21300010: Blink_Sword_3_5
+    21300012: Blink_Sword_3_6
+    21300014: Blink_Sword_3_7
+    21300016: Blink_Sword_3_8
+    21300018: Blink_Sword_3_9
+    21300020: Blink_Sword_3_10
+    21300022: Blink_Sword_3_11
+    21300024: Blink_Sword_3_12
+    21300026: Blink_Sword_3_13
+    21300028: Blink_Sword_3_14
+    21300030: Blink_Sword_3_15
+    21300032: Blink_Sword_3_16
+    21300034: Blink_Sword_3_17
+    21300036: Blink_Sword_3_18
+    21300038: Blink_Sword_3_19
+    21300040: Blink_Sword_3_20
+    21300042: Blink_Sword_3_21
+    21300044: Blink_Sword_3_22
+    21300046: Blink_Sword_3_23
+    21300048: Blink_Sword_3_24
+    21300050: Blink_Sword_3_25
+    21300052: Blink_Sword_3_26
+    21300054: Blink_Sword_3_27
+    21300056: Blink_Sword_3_28
+    21300058: Blink_Sword_3_29
+    21300060: Blink_Sword_3_30
+    21300062: Blink_Sword_3_31
+    21300064: Blink_Sword_3_32
+    21300066: Blink_Sword_3_33
+    21300068: Blink_Sword_3_34
+    21300070: Blink_Sword_3_35
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +81,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -92,7 +92,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 4096
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -100,7 +100,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 4096
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -111,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bLINK espada_0
+      name: Blink_Sword_3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1909
-        width: 600
-        height: 600
+        x: 4
+        y: 1608
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,13 +125,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_1
+      name: Blink_Sword_3_1
       rect:
         serializedVersion: 2
-        x: 665
-        y: 1909
-        width: 600
-        height: 600
+        x: 456
+        y: 1608
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,13 +139,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_2
+      name: Blink_Sword_3_2
       rect:
         serializedVersion: 2
-        x: 1330
-        y: 1909
-        width: 600
-        height: 600
+        x: 908
+        y: 1608
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,13 +153,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_3
+      name: Blink_Sword_3_3
       rect:
         serializedVersion: 2
-        x: 1995
-        y: 1909
-        width: 600
-        height: 600
+        x: 1360
+        y: 1608
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,13 +167,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_4
+      name: Blink_Sword_3_4
       rect:
         serializedVersion: 2
-        x: 2660
-        y: 1909
-        width: 600
-        height: 600
+        x: 1812
+        y: 1608
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,13 +181,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_5
+      name: Blink_Sword_3_5
       rect:
         serializedVersion: 2
-        x: 3325
-        y: 1909
-        width: 600
-        height: 600
+        x: 2265
+        y: 1608
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,13 +195,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_6
+      name: Blink_Sword_3_6
       rect:
         serializedVersion: 2
-        x: 3990
-        y: 1909
-        width: 600
-        height: 600
+        x: 2717
+        y: 1608
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,13 +209,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_7
+      name: Blink_Sword_3_7
       rect:
         serializedVersion: 2
-        x: 4655
-        y: 1909
-        width: 600
-        height: 600
+        x: 3169
+        y: 1608
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,13 +223,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_8
+      name: Blink_Sword_3_8
       rect:
         serializedVersion: 2
-        x: 5320
-        y: 1909
-        width: 600
-        height: 600
+        x: 3621
+        y: 1608
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_9
+      name: Blink_Sword_3_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1273
-        width: 600
-        height: 600
+        x: 4
+        y: 1076
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,13 +251,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_10
+      name: Blink_Sword_3_10
       rect:
         serializedVersion: 2
-        x: 665
-        y: 1273
-        width: 600
-        height: 600
+        x: 456
+        y: 1076
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,13 +265,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_11
+      name: Blink_Sword_3_11
       rect:
         serializedVersion: 2
-        x: 1330
-        y: 1273
-        width: 600
-        height: 600
+        x: 908
+        y: 1075
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,13 +279,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_12
+      name: Blink_Sword_3_12
       rect:
         serializedVersion: 2
-        x: 1995
-        y: 1273
-        width: 600
-        height: 600
+        x: 1360
+        y: 1076
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,13 +293,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_13
+      name: Blink_Sword_3_13
       rect:
         serializedVersion: 2
-        x: 2660
-        y: 1273
-        width: 600
-        height: 600
+        x: 1812
+        y: 1075
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,13 +307,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_14
+      name: Blink_Sword_3_14
       rect:
         serializedVersion: 2
-        x: 3325
-        y: 1273
-        width: 600
-        height: 600
+        x: 2265
+        y: 1075
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,13 +321,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_15
+      name: Blink_Sword_3_15
       rect:
         serializedVersion: 2
-        x: 3990
-        y: 1273
-        width: 600
-        height: 600
+        x: 2717
+        y: 1075
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,13 +335,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_16
+      name: Blink_Sword_3_16
       rect:
         serializedVersion: 2
-        x: 4655
-        y: 1273
-        width: 600
-        height: 600
+        x: 3169
+        y: 1075
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,13 +349,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_17
+      name: Blink_Sword_3_17
       rect:
         serializedVersion: 2
-        x: 5316
-        y: 1273
-        width: 600
-        height: 600
+        x: 3621
+        y: 1075
+        width: 447
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,13 +363,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_18
+      name: Blink_Sword_3_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 634
-        width: 600
-        height: 600
+        x: 4
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,13 +377,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_19
+      name: Blink_Sword_3_19
       rect:
         serializedVersion: 2
-        x: 665
-        y: 637
-        width: 600
-        height: 600
+        x: 456
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,13 +391,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_20
+      name: Blink_Sword_3_20
       rect:
         serializedVersion: 2
-        x: 1330
-        y: 637
-        width: 600
-        height: 600
+        x: 908
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,13 +405,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_21
+      name: Blink_Sword_3_21
       rect:
         serializedVersion: 2
-        x: 1995
-        y: 637
-        width: 600
-        height: 600
+        x: 1360
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,13 +419,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_22
+      name: Blink_Sword_3_22
       rect:
         serializedVersion: 2
-        x: 2660
-        y: 637
-        width: 600
-        height: 600
+        x: 1812
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,13 +433,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_23
+      name: Blink_Sword_3_23
       rect:
         serializedVersion: 2
-        x: 3325
-        y: 637
-        width: 600
-        height: 600
+        x: 2264
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,13 +447,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_24
+      name: Blink_Sword_3_24
       rect:
         serializedVersion: 2
-        x: 3990
-        y: 637
-        width: 600
-        height: 600
+        x: 2716
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,13 +461,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_25
+      name: Blink_Sword_3_25
       rect:
         serializedVersion: 2
-        x: 4655
-        y: 637
-        width: 600
-        height: 600
+        x: 3168
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,13 +475,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_26
+      name: Blink_Sword_3_26
       rect:
         serializedVersion: 2
-        x: 5320
-        y: 637
-        width: 600
-        height: 600
+        x: 3620
+        y: 542
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,13 +489,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_27
+      name: Blink_Sword_3_27
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 600
-        height: 600
+        x: 4
+        y: 10
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,13 +503,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_28
+      name: Blink_Sword_3_28
       rect:
         serializedVersion: 2
-        x: 665
-        y: 1
-        width: 600
-        height: 600
+        x: 456
+        y: 10
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,13 +517,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_29
+      name: Blink_Sword_3_29
       rect:
         serializedVersion: 2
-        x: 1330
-        y: 1
-        width: 600
-        height: 600
+        x: 908
+        y: 10
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,13 +531,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_30
+      name: Blink_Sword_3_30
       rect:
         serializedVersion: 2
-        x: 1995
-        y: 1
-        width: 600
-        height: 600
+        x: 1360
+        y: 10
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,13 +545,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_31
+      name: Blink_Sword_3_31
       rect:
         serializedVersion: 2
-        x: 2660
-        y: 1
-        width: 600
-        height: 600
+        x: 1812
+        y: 10
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,13 +559,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_32
+      name: Blink_Sword_3_32
       rect:
         serializedVersion: 2
-        x: 3324
-        y: 1
-        width: 600
-        height: 600
+        x: 2264
+        y: 10
+        width: 448
+        height: 528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,13 +573,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_33
+      name: Blink_Sword_3_33
       rect:
         serializedVersion: 2
-        x: 3990
-        y: 1
-        width: 600
-        height: 600
+        x: 2716
+        y: 9
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,13 +587,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_34
+      name: Blink_Sword_3_34
       rect:
         serializedVersion: 2
-        x: 4655
-        y: 1
-        width: 600
-        height: 600
+        x: 3168
+        y: 9
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,13 +601,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: bLINK espada_35
+      name: Blink_Sword_3_35
       rect:
         serializedVersion: 2
-        x: 5316
-        y: 0
-        width: 600
-        height: 600
+        x: 3620
+        y: 9
+        width: 448
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
