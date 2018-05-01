@@ -26,6 +26,8 @@ public class Monster : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
 
+    public GameObject damageNumber;
+
     // Use this for initialization
     void Start()
     {
@@ -36,7 +38,7 @@ public class Monster : MonoBehaviour
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
         timeBetweenDamageCounter = Random.Range(0f, timeBetweenDamage * 0.5f);
-        timeBetweenAttackCounter = timeBetweenAttack;
+        timeBetweenAttackCounter = 0f;
         currentHealth = maxHealth;
     }
 
@@ -84,6 +86,8 @@ public class Monster : MonoBehaviour
                 else
                 {
                     currentHealth -= 1;
+                    var clone = (GameObject) Instantiate(damageNumber, transform.position, Quaternion.Euler(Vector3.zero));
+                    clone.GetComponent<FloatingNumbers>().damageNumber = 1;
                     timeBetweenAttackCounter = timeBetweenAttack;
                 }
             }
@@ -94,6 +98,8 @@ public class Monster : MonoBehaviour
                 else
                 {
                     collision.gameObject.GetComponent<Player>().currentHealth -= 10;
+                    var clone = (GameObject)Instantiate(damageNumber, collision.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+                    clone.GetComponent<FloatingNumbers>().damageNumber = 10;
                     timeBetweenDamageCounter = timeBetweenDamage;
                 }
             }

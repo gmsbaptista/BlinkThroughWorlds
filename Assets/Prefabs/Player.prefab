@@ -121,7 +121,7 @@ MonoBehaviour:
   attacking: 0
   attackTime: 0.5
   worldCenter: 40.5
-  maxHealth: 100
+  maxHealth: 50
   currentHealth: 0
 --- !u!212 &212324065464833840
 SpriteRenderer:
