@@ -5039,6 +5039,9 @@ MonoBehaviour:
   timeBetweenMove: 2
   timeToMove: 1
   timeBetweenDamage: 1
+  timeBetweenAttack: 0.5
+  currentHealth: 0
+  maxHealth: 3
 --- !u!50 &176204477
 Rigidbody2D:
   serializedVersion: 4
@@ -5631,6 +5634,9 @@ MonoBehaviour:
   timeBetweenMove: 2
   timeToMove: 1
   timeBetweenDamage: 1
+  timeBetweenAttack: 0.5
+  currentHealth: 0
+  maxHealth: 3
 --- !u!50 &200898607
 Rigidbody2D:
   serializedVersion: 4
@@ -21543,6 +21549,9 @@ MonoBehaviour:
   timeBetweenMove: 2
   timeToMove: 1
   timeBetweenDamage: 1
+  timeBetweenAttack: 0.5
+  currentHealth: 0
+  maxHealth: 3
 --- !u!50 &782924966
 Rigidbody2D:
   serializedVersion: 4
@@ -40103,6 +40112,9 @@ MonoBehaviour:
   timeBetweenMove: 2
   timeToMove: 1
   timeBetweenDamage: 1
+  timeBetweenAttack: 0.5
+  currentHealth: 0
+  maxHealth: 3
 --- !u!50 &1505445810
 Rigidbody2D:
   serializedVersion: 4

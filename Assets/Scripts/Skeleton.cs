@@ -18,6 +18,11 @@ public class Skeleton : MonoBehaviour {
 
     public float timeBetweenDamage;
     private float timeBetweenDamageCounter;
+    public float timeBetweenAttack;
+    private float timeBetweenAttackCounter;
+
+    public int currentHealth;
+    public int maxHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +32,8 @@ public class Skeleton : MonoBehaviour {
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
         timeBetweenDamageCounter = Random.Range(0f, timeBetweenDamage * 0.5f);
+        timeBetweenAttackCounter = timeBetweenAttack;
+        currentHealth = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -52,13 +59,23 @@ public class Skeleton : MonoBehaviour {
                 moveDirection = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }
+        if (currentHealth <= 0)
+            Destroy(gameObject);
 	}
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
             if (collision.gameObject.GetComponent<Player>().attacking)
-                Destroy(gameObject);
+            {
+                if (timeBetweenAttackCounter > 0f)
+                    timeBetweenAttackCounter -= Time.deltaTime;
+                else
+                {
+                    currentHealth -= 1;
+                    timeBetweenAttackCounter = timeBetweenAttack;
+                }
+            }
             else
             {
                 if (timeBetweenDamageCounter > 0f)
