@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private bool moving;
     private Vector2 lastMove;
 
-    private bool attacking;
+    public bool attacking;
     public float attackTime;
     private float attackTimeCounter;
 
@@ -19,11 +19,15 @@ public class Player : MonoBehaviour
     private int worldIndex = -1; //-1 is physical, 1 is spirit
     public float worldCenter;
 
+    public int maxHealth;
+    public int currentHealth;
+
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -62,7 +66,7 @@ public class Player : MonoBehaviour
                 worldIndex /= -1;
                 transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && worldIndex == -1)
             {
                 attackTimeCounter = attackTime;
                 attacking = true;
