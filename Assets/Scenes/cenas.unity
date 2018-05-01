@@ -25572,6 +25572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  attackTime: 0.5
   worldCenter: 40.5
 --- !u!212 &1020560963
 SpriteRenderer:
