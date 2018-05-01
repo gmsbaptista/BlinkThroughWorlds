@@ -26,6 +26,9 @@ public class Monster : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
 
+    public int monsterDamage;
+    public int swordDamage;
+
     public GameObject damageNumber;
 
     // Use this for initialization
@@ -85,9 +88,9 @@ public class Monster : MonoBehaviour
                     timeBetweenAttackCounter -= Time.deltaTime;
                 else
                 {
-                    currentHealth -= 1;
+                    currentHealth -= swordDamage;
                     var clone = (GameObject) Instantiate(damageNumber, transform.position, Quaternion.Euler(Vector3.zero));
-                    clone.GetComponent<FloatingNumbers>().damageNumber = 1;
+                    clone.GetComponent<FloatingNumbers>().damageNumber = swordDamage;
                     timeBetweenAttackCounter = timeBetweenAttack;
                 }
             }
@@ -97,9 +100,9 @@ public class Monster : MonoBehaviour
                     timeBetweenDamageCounter -= Time.deltaTime;
                 else
                 {
-                    collision.gameObject.GetComponent<Player>().currentHealth -= 10;
+                    collision.gameObject.GetComponent<Player>().currentHealth -= monsterDamage;
                     var clone = (GameObject)Instantiate(damageNumber, collision.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
-                    clone.GetComponent<FloatingNumbers>().damageNumber = 10;
+                    clone.GetComponent<FloatingNumbers>().damageNumber = monsterDamage;
                     timeBetweenDamageCounter = timeBetweenDamage;
                 }
             }
