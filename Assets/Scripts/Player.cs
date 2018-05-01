@@ -85,5 +85,8 @@ public class Player : MonoBehaviour
         animator.SetFloat("LastMoveY", lastMove.y);
         animator.SetBool("Moving", moving);
         animator.SetBool("Attacking", attacking);
+
+        if (currentHealth <= 0)
+            gameObject.SetActive(false);
     }
 }
