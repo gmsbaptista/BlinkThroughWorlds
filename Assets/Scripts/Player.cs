@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("LastMoveY", lastMove.y);
         animator.SetBool("Moving", moving);
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && (transform.position.x < 39f || transform.position.x > 52f))
         {
             var offset = transform.position.x - worldIndex * worldCenter;
             worldIndex /= -1;
