@@ -123,6 +123,8 @@ MonoBehaviour:
   worldCenter: 40.5
   maxHealth: 50
   currentHealth: 0
+  maxEnergy: 20
+  currentEnergy: 0
 --- !u!212 &212324065464833840
 SpriteRenderer:
   m_ObjectHideFlags: 1

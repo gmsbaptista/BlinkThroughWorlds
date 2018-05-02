@@ -123,7 +123,9 @@ MonoBehaviour:
   timeBetweenDamage: 1
   timeBetweenAttack: 0.5
   currentHealth: 0
-  maxHealth: 3
+  maxHealth: 15
+  monsterDamage: 5
+  swordDamage: 5
   damageNumber: {fileID: 1410149889489530, guid: 9289835b8ea203645a2e74e80e127694,
     type: 2}
 --- !u!212 &212463786577252814

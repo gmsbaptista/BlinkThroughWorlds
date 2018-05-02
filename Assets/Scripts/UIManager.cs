@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour {
 
     public Slider healthBar;
     public Text hpText;
+    public Slider energyBar;
+    public Text energyText;
     public Player player;
 
 
@@ -20,5 +22,8 @@ public class UIManager : MonoBehaviour {
         healthBar.maxValue = player.maxHealth;
         healthBar.value = player.currentHealth;
         hpText.text = "HP: " + player.currentHealth + "/" + player.maxHealth;
+        energyBar.maxValue = player.maxEnergy;
+        energyBar.value = player.currentEnergy;
+        energyText.text = "Energy: " + player.currentEnergy + "/" + player.maxEnergy;
     }
 }
