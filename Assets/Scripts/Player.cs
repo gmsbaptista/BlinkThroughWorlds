@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
     }
 
-	public void changeWorld(){
+	public void ChangeWorld(){
 		currentEnergy -= 5;
         var offset = transform.position.x - worldIndex * worldCenter;
         worldIndex /= -1;

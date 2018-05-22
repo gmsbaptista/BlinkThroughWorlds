@@ -37,7 +37,7 @@ public class Fading : MonoBehaviour {
 
 
 			if(percentangeComplete >= 1 && end == 1){
-				player.changeWorld();
+				player.ChangeWorld();
 				StartCoroutine(FadePanel(fade, fade.alpha, 0));
 				break;
 			}
