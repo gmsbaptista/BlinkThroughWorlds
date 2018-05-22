@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public int maxEnergy;
     public int currentEnergy;
 
+
     // Use this for initialization
     void Start()
     {
@@ -63,13 +64,6 @@ public class Player : MonoBehaviour
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
             }
 
-            if (Input.GetMouseButtonDown(1) && (transform.position.x < 39f || transform.position.x > 52f) && currentEnergy > 0)
-            {
-                currentEnergy -= 5;
-                var offset = transform.position.x - worldIndex * worldCenter;
-                worldIndex /= -1;
-                transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);
-            }
             if (Input.GetMouseButtonDown(0) && worldIndex == -1)
             {
                 attackTimeCounter = attackTime;
@@ -93,4 +87,14 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
             gameObject.SetActive(false);
     }
+
+	public void changeWorld(){
+		currentEnergy -= 5;
+        var offset = transform.position.x - worldIndex * worldCenter;
+        worldIndex /= -1;
+        transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);
+		
+	}
+
 }
+
