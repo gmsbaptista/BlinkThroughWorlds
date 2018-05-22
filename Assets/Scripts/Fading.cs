@@ -6,11 +6,9 @@ public class Fading : MonoBehaviour {
 
 	private CanvasGroup fade;
 	public Player player;
-	public int currentEnergy;
 
 	// Use this for initialization
 	void Start () {
-		print(currentEnergy);
 		fade = GetComponent<CanvasGroup>();
 	}
 	
