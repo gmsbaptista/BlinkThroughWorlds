@@ -10,11 +10,12 @@ public class UIManager : MonoBehaviour {
     public Slider energyBar;
     public Text energyText;
     public Player player;
+    public GameObject inventory;
 
 
 	// Use this for initialization
 	void Start () {
-		
+        inventory.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -25,5 +26,9 @@ public class UIManager : MonoBehaviour {
         energyBar.maxValue = player.maxEnergy;
         energyBar.value = player.currentEnergy;
         energyText.text = "Energy: " + player.currentEnergy + "/" + player.maxEnergy;
+        if(Input.GetKeyDown("i"))
+        {
+            inventory.SetActive(!inventory.activeSelf);
+        }
     }
 }

@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public int maxEnergy;
     public int currentEnergy;
 
+    public Inventory inventory;
 
     // Use this for initialization
     void Start()
