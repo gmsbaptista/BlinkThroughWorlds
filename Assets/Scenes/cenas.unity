@@ -30560,11 +30560,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4186028370486716, guid: e13627c85244f304eb69ee794086b614, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.892849
+      value: -17.8
       objectReference: {fileID: 0}
     - target: {fileID: 4186028370486716, guid: e13627c85244f304eb69ee794086b614, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.20609593
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4186028370486716, guid: e13627c85244f304eb69ee794086b614, type: 2}
       propertyPath: m_LocalPosition.z
@@ -45104,6 +45104,7 @@ GameObject:
   - component: {fileID: 1653736091}
   - component: {fileID: 1653736090}
   - component: {fileID: 1653736089}
+  - component: {fileID: 1653736092}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -45156,7 +45157,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 592921237
+  m_SortingLayerID: 164598025
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9924ae82c6f9dc3458768ba414b7b82a, type: 3}
@@ -45176,12 +45177,37 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653736088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.82, y: 2.48, z: 0}
+  m_LocalPosition: {x: -14.81, y: 4.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1653736092
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653736088}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9765625, y: 0.5}
+    newSize: {x: 2.5, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9765625, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1658940498
 GameObject:
   m_ObjectHideFlags: 0
