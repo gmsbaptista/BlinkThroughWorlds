@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 05ee3d7f45025004eaf7384efd847712
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ataque_horizontal_0
+    21300002: ataque_horizontal_1
+    21300004: ataque_horizontal_2
+    21300006: ataque_horizontal_3
+    21300008: ataque_horizontal_4
+    21300010: ataque_horizontal_5
+    21300012: ataque_horizontal_6
+    21300014: ataque_horizontal_7
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ataque_horizontal_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 925
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.88505614, y: 0.48628905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12a8f4230823bd4a84de6beedec9b2c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_1
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 925
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.11494388, y: 0.49314472}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06805dc3aa702e54eb9d5c3fead1120b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 618
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.8829747, y: 0.47257808}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f8cbd7351d655438474ae8781c0c15
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_3
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 618
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.112862565, y: 0.48628923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4c83f92e5d9b44da07df5ff223cdab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 311
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.89130026, y: 0.51371115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75602d61160708d419fc9d9fa930b1b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_5
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 311
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.11494388, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b057e2674920bcc40a0e6449826d1750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.89130026, y: 0.5137111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8632fb6cc12f3d442ae7ac2642414826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque_horizontal_7
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 4
+        width: 998
+        height: 303
+      alignment: 9
+      pivot: {x: 0.11910662, y: 0.48628905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61885abc757992f47adc1494e36762a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4645e69ae39b1ec428899e1a30388827
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
