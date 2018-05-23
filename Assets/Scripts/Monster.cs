@@ -31,6 +31,9 @@ public class Monster : MonoBehaviour
 
     public GameObject damageNumber;
 
+    public GameObject player;
+    public int distanceThreshold;
+
     // Use this for initialization
     void Start()
     {
@@ -77,6 +80,16 @@ public class Monster : MonoBehaviour
         animator.SetBool("Moving", moving);
         if (currentHealth <= 0)
             Destroy(gameObject);
+
+        /*if (Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < distanceThreshold)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            print(Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y)));
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }*/
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -106,6 +119,7 @@ public class Monster : MonoBehaviour
                     timeBetweenDamageCounter = timeBetweenDamage;
                 }
             }
+            //print("Distance at Collision: " + Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y)));
         }
     }
 }
