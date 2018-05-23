@@ -122,4 +122,5 @@ public class Monster : MonoBehaviour
             //print("Distance at Collision: " + Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y)));
         }
     }
+
 }
