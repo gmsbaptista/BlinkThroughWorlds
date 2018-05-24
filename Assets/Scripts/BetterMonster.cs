@@ -93,7 +93,7 @@ public class BetterMonster : MonoBehaviour {
             moveDirection = player.transform.position - transform.position;
             lastMove = new Vector2(moveDirection.x, moveDirection.y);
             timeBetweenAttack = player.attackTime;
-            if (player.attacking)
+            if (player.attacking && (Vector2.Angle(player.Facing(), -lastMove) < 50f))
             {
                 if (timeBetweenAttackCounter > 0f)
                 {

@@ -99,5 +99,10 @@ public class Player : MonoBehaviour
 		
 	}
 
+    public Vector2 Facing()
+    {
+        return lastMove;
+    }
+
 }
 
