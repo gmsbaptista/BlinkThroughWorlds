@@ -9,6 +9,7 @@ public class BetterMonster : MonoBehaviour {
     private bool attacking;
     private bool wanderMode = true;
 
+    private Rigidbody2D rigidBody;
     private Animator animator;
     private Vector2 lastMove;
     private Vector3 moveDirection;
@@ -33,7 +34,9 @@ public class BetterMonster : MonoBehaviour {
     public GameObject damageNumber;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
@@ -48,7 +51,8 @@ public class BetterMonster : MonoBehaviour {
             if (moving)
             {
                 timeToMoveCounter -= Time.deltaTime;
-                transform.Translate(moveDirection * Time.deltaTime);
+                //transform.Translate(moveDirection * Time.deltaTime);
+                rigidBody.velocity = moveDirection;
                 lastMove = new Vector2(moveDirection.x, moveDirection.y);
                 if (timeToMoveCounter < 0f)
                 {
@@ -59,6 +63,7 @@ public class BetterMonster : MonoBehaviour {
             else
             {
                 timeBetweenMoveCounter -= Time.deltaTime;
+                rigidBody.velocity = Vector2.zero;
 
                 if (timeBetweenMoveCounter < 0f)
                 {
@@ -107,8 +112,8 @@ public class BetterMonster : MonoBehaviour {
                     timeBetweenAttackCounter = timeBetweenAttack;
                 }
             }
-            else
-            {
+            //else
+            //{
                 if (attacking)
                 {
                     timeToDamageCounter -= Time.deltaTime;
@@ -133,7 +138,7 @@ public class BetterMonster : MonoBehaviour {
                     }
                 }
 
-            }
+            //}
         }
     }
 
@@ -142,6 +147,7 @@ public class BetterMonster : MonoBehaviour {
         if (collision.gameObject.name == "PlayerTrigger")
         {
             wanderMode = true;
+            attacking = false;
         }
     }
 }
