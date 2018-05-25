@@ -16,7 +16,7 @@ public class Fading : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {		
-		if (Input.GetMouseButtonDown(1) && player.CanSwitch() && player.currentEnergy > 0)
+		if (Input.GetMouseButtonDown(1) && player.CanSwitch() && player.currentEnergy > player.switchCost)
         {
             StartCoroutine(FadePanel(fade, fade.alpha, 1));
         }		

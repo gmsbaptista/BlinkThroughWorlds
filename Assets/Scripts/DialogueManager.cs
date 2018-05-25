@@ -10,6 +10,9 @@ public class DialogueManager : MonoBehaviour {
 
     public bool dialogueActive;
 
+    public string[] dialogueLines;
+    public int currentLine;
+
 	// Use this for initialization
 	void Start () {
         dialogueActive = false;
@@ -19,8 +22,19 @@ public class DialogueManager : MonoBehaviour {
 	void Update () {
 		if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
+            //dialogueActive = false;
+            //dialogueBox.SetActive(false);
+            currentLine++;
+        }
+        if (currentLine >= dialogueLines.Length)
+        {
             dialogueActive = false;
             dialogueBox.SetActive(false);
+            currentLine = 0;
+        }
+        if (dialogueActive)
+        {
+            dialogueText.text = dialogueLines[currentLine];
         }
 	}
 
@@ -29,5 +43,13 @@ public class DialogueManager : MonoBehaviour {
         dialogueActive = true;
         dialogueBox.SetActive(true);
         dialogueText.text = dialogue;
+    }
+
+    public void ShowDialogue (string[] dialogue)
+    {
+        dialogueActive = true;
+        dialogueBox.SetActive(true);
+        dialogueLines = dialogue;
+        currentLine = 0;
     }
 }

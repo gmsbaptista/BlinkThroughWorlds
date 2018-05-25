@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ghost : MonoBehaviour {
 
     private DialogueManager dialogueManager;
-    public string dialogue;
+    public string[] dialogueLines;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,11 @@ public class Ghost : MonoBehaviour {
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                dialogueManager.ShowBox(dialogue);
+                //dialogueManager.ShowBox(dialogue);
+                if (!dialogueManager.dialogueActive)
+                {
+                    dialogueManager.ShowDialogue(dialogueLines);
+                }
             }
         }
     }

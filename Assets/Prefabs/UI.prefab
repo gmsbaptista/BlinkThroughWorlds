@@ -830,7 +830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0d3ba31a04a574e9d42191b688a8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &114250733814141274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1254,6 +1253,9 @@ MonoBehaviour:
   dialogueBox: {fileID: 1525114638595210}
   dialogueText: {fileID: 114921448768031628}
   dialogueActive: 0
+  dialogueLines:
+  - Test Dialogue
+  currentLine: 0
 --- !u!114 &114881602435584960
 MonoBehaviour:
   m_ObjectHideFlags: 1
