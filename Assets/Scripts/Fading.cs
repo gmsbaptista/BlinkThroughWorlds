@@ -5,24 +5,26 @@ using UnityEngine;
 public class Fading : MonoBehaviour {
 
 	private CanvasGroup fade;
-	public Player player;
+	private Player player;
 
 	// Use this for initialization
 	void Start () {
 		fade = GetComponent<CanvasGroup>();
+        player = FindObjectOfType<Player>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-		if (Input.GetMouseButtonDown(1) && (player.transform.position.x < 39f || player.transform.position.x > 52f) && player.currentEnergy > 0)
-            {
-               StartCoroutine(FadePanel(fade, fade.alpha, 1));
-            }		
+	void Update ()
+    {		
+		if (Input.GetMouseButtonDown(1) && player.CanSwitch() && player.currentEnergy > 0)
+        {
+            StartCoroutine(FadePanel(fade, fade.alpha, 1));
+        }		
 	}
 
 
-	public IEnumerator FadePanel(CanvasGroup cg, float start, float end, float lerpTime = 1.0f){
+	public IEnumerator FadePanel(CanvasGroup cg, float start, float end, float lerpTime = 1.0f)
+    {
 		float _timeSartedLerping = Time.time;
 		float timeSinceStarted = Time.time - _timeSartedLerping;
 		float percentangeComplete = timeSinceStarted/lerpTime;

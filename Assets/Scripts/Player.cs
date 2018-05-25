@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public int currentEnergy;
 
     public int swordDamage;
+    public int switchCost;
 
     public Inventory inventory;
 
@@ -91,17 +92,27 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
     }
 
-	public void ChangeWorld(){
-		currentEnergy -= 5;
+	public void ChangeWorld()
+    {
+		currentEnergy -= switchCost;
         var offset = transform.position.x - worldIndex * worldCenter;
         worldIndex /= -1;
-        transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);
-		
+        transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);		
 	}
 
     public Vector2 Facing()
     {
         return lastMove;
+    }
+
+    public bool CanSwitch()
+    {
+        //(player.transform.position.x < 39f || player.transform.position.x > 52f)
+        //x - 70 ~ 93, y - -30~-40
+        //x - -86~-107, y - 16~-40
+        Vector3 pos = this.gameObject.transform.position;
+        return (pos.x < 70f || pos.x > 93f) && (pos.x > -87f || pos.x < -107f || pos.y > 16f);
+        //return true;
     }
 
 }

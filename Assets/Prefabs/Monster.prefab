@@ -125,7 +125,7 @@ MonoBehaviour:
   timeToDamage: 0.1
   currentHealth: 0
   maxHealth: 15
-  monsterDamage: 0
+  monsterDamage: 5
   damageNumber: {fileID: 1410149889489530, guid: 9289835b8ea203645a2e74e80e127694,
     type: 2}
 --- !u!212 &212463786577252814
