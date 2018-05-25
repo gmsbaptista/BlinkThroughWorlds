@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212485537215886660}
   - component: {fileID: 95838560869621088}
   - component: {fileID: 61456639276316112}
+  - component: {fileID: 114969360880259672}
   m_Layer: 0
   m_Name: OldManMariana
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291924285773448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.76, y: 0.17, z: -0.20767593}
+  m_LocalPosition: {x: -93.94967, y: 38.522686, z: -0.20767593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +86,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114969360880259672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291924285773448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e12f9fbb30194b46987ad0a59f210f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 0
+  cat: {fileID: 0}
+  damageNumber: {fileID: 1410149889489530, guid: 9289835b8ea203645a2e74e80e127694,
+    type: 2}
 --- !u!212 &212485537215886660
 SpriteRenderer:
   m_ObjectHideFlags: 1
