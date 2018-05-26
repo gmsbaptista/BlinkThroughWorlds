@@ -74,6 +74,19 @@ public class BetterMonster : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            if (moving)
+            {
+                rigidBody.velocity = moveDirection;
+                lastMove = new Vector2(moveDirection.x, moveDirection.y);
+            }
+            else
+            {
+                rigidBody.velocity = Vector2.zero;
+            }
+
+        }
 
         animator.SetFloat("MoveX", moveDirection.x);
         animator.SetFloat("MoveY", moveDirection.y);
@@ -88,15 +101,42 @@ public class BetterMonster : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            moving = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            moving = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "PlayerLongRange")
+        {
+            wanderMode = false;
+            moving = true;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTrigger")
+        if (collision.gameObject.name == "PlayerLongRange")
         {
             Player player = collision.gameObject.GetComponentInParent<Player>();
-            wanderMode = false;
-            moving = false;
             moveDirection = player.transform.position - transform.position;
             lastMove = new Vector2(moveDirection.x, moveDirection.y);
+        }
+        if (collision.gameObject.name == "PlayerMeleeRange")
+        {
+            Player player = collision.gameObject.GetComponentInParent<Player>();
             timeBetweenAttack = player.attackTime;
             if (player.attacking && (Vector2.Angle(player.Facing(), -lastMove) < 50f))
             {
@@ -112,41 +152,38 @@ public class BetterMonster : MonoBehaviour {
                     timeBetweenAttackCounter = timeBetweenAttack;
                 }
             }
-            //else
-            //{
-                if (attacking)
+            if (attacking)
+            {
+                timeToDamageCounter -= Time.deltaTime;
+                if (timeToDamageCounter < 0f)
                 {
-                    timeToDamageCounter -= Time.deltaTime;
-                    if (timeToDamageCounter < 0f)
-                    {
-                        attacking = false;
-                        timeBetweenDamageCounter = timeBetweenDamage;
-                    }
+                    attacking = false;
+                    timeBetweenDamageCounter = timeBetweenDamage;
                 }
-                else
+            }
+            else
+            {
+                timeBetweenDamageCounter -= Time.deltaTime;
+                if (timeBetweenDamageCounter < 0f)
                 {
-                    timeBetweenDamageCounter -= Time.deltaTime;
-
-                    if (timeBetweenDamageCounter < 0f)
-                    {
-                        attacking = true;
-                        player.currentHealth -= monsterDamage;
-                        var clone = (GameObject)Instantiate(damageNumber, player.transform.position, Quaternion.Euler(Vector3.zero));
-                        clone.GetComponent<FloatingNumbers>().damageNumber = monsterDamage;
-                        timeToDamageCounter = timeToDamage;
-                        
-                    }
+                    attacking = true;
+                    player.currentHealth -= monsterDamage;
+                    var clone = (GameObject)Instantiate(damageNumber, player.transform.position, Quaternion.Euler(Vector3.zero));
+                    clone.GetComponent<FloatingNumbers>().damageNumber = monsterDamage;
+                    timeToDamageCounter = timeToDamage;
                 }
-
-            //}
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTrigger")
+        if (collision.gameObject.name == "PlayerLongRange")
         {
             wanderMode = true;
+        }
+        if (collision.gameObject.name == "PlayerMeleeRange")
+        {
             attacking = false;
         }
     }
