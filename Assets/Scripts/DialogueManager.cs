@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour {
         if (currentLine >= dialogueLines.Length)
         {
             CloseDialogue();
-            currentLine = 0;
+            //currentLine = 0;
         }
         if (dialogueActive)
         {
@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour {
         OpenDialogue();
         characterName.text = character;
         dialogueLines = dialogue;
-        currentLine = 0;
+        currentLine = -1;
     }
 
     public void CloseDialogue()

@@ -20,9 +20,9 @@ public class Ghost : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTrigger")
+        if (collision.gameObject.name == "PlayerMeleeRange")
         {
-            if (!dialogueManager.dialogueActive && Input.GetKeyUp(KeyCode.Space))
+            if (!dialogueManager.dialogueActive && Input.GetKeyDown(KeyCode.Space))
             {
                 dialogueManager.ShowDialogue(characterName, dialogueLines);
             }
@@ -31,7 +31,7 @@ public class Ghost : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTrigger")
+        if (collision.gameObject.name == "PlayerMeleeRange")
         {
             if (dialogueManager.dialogueActive)
             {
