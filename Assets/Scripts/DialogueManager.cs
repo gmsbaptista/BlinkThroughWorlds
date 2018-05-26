@@ -16,8 +16,7 @@ public class DialogueManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        dialogueActive = false;
-        dialogueBox.SetActive(false);
+        CloseDialogue();
     }
 	
 	// Update is called once per frame
@@ -30,8 +29,7 @@ public class DialogueManager : MonoBehaviour {
         }
         if (currentLine >= dialogueLines.Length)
         {
-            dialogueActive = false;
-            dialogueBox.SetActive(false);
+            CloseDialogue();
             currentLine = 0;
         }
         if (dialogueActive)
@@ -40,19 +38,29 @@ public class DialogueManager : MonoBehaviour {
         }
 	}
 
-    public void ShowBox (string dialogue)
+    /*public void ShowBox (string dialogue)
     {
-        dialogueActive = true;
-        dialogueBox.SetActive(true);
+        OpenDialogue();
         dialogueText.text = dialogue;
-    }
+    }*/
 
     public void ShowDialogue (string character, string[] dialogue)
     {
-        dialogueActive = true;
-        dialogueBox.SetActive(true);
+        OpenDialogue();
         characterName.text = character;
         dialogueLines = dialogue;
         currentLine = 0;
+    }
+
+    public void CloseDialogue()
+    {
+        dialogueActive = false;
+        dialogueBox.SetActive(false);
+    }
+
+    public void OpenDialogue()
+    {
+        dialogueActive = true;
+        dialogueBox.SetActive(true);
     }
 }

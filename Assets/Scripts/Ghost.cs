@@ -22,14 +22,22 @@ public class Ghost : MonoBehaviour {
     {
         if (collision.gameObject.name == "PlayerTrigger")
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (!dialogueManager.dialogueActive && Input.GetKeyUp(KeyCode.Space))
             {
-                //dialogueManager.ShowBox(dialogue);
-                if (!dialogueManager.dialogueActive)
-                {
-                    dialogueManager.ShowDialogue(characterName, dialogueLines);
-                }
+                dialogueManager.ShowDialogue(characterName, dialogueLines);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "PlayerTrigger")
+        {
+            if (dialogueManager.dialogueActive)
+            {
+                dialogueManager.CloseDialogue();
+            }
+        }
+
     }
 }
