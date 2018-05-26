@@ -39,6 +39,18 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public bool ItemInInventory (Item itemToFind)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] == itemToFind)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public bool IsFull()
     {
         return numItems >= numItemSlots;
