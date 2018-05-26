@@ -690,6 +690,11 @@ Prefab:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
+        type: 2}
+      propertyPath: characterName
+      value: Balakay
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
   m_IsPrefabParent: 0
@@ -766,6 +771,11 @@ Prefab:
       propertyPath: dialogueLines.Array.data[1]
       value: Not a girl... Not a robot...
       objectReference: {fileID: 0}
+    - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
+        type: 2}
+      propertyPath: characterName
+      value: Denice
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
   m_IsPrefabParent: 0
@@ -822,6 +832,11 @@ Prefab:
         type: 2}
       propertyPath: dialogueLines.Array.data[1]
       value: I think I had a key around here somewhere...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
+        type: 2}
+      propertyPath: characterName
+      value: Peeves
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
@@ -1132,10 +1147,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066771026824142, guid: 88cfeca4a7de978499ce5ac6ed84554b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88cfeca4a7de978499ce5ac6ed84554b, type: 2}

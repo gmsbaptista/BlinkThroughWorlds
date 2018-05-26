@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ghost : MonoBehaviour {
 
     private DialogueManager dialogueManager;
+    public string characterName;
     public string[] dialogueLines;
 
 	// Use this for initialization
@@ -26,7 +27,7 @@ public class Ghost : MonoBehaviour {
                 //dialogueManager.ShowBox(dialogue);
                 if (!dialogueManager.dialogueActive)
                 {
-                    dialogueManager.ShowDialogue(dialogueLines);
+                    dialogueManager.ShowDialogue(characterName, dialogueLines);
                 }
             }
         }

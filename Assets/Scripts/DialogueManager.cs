@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour {
 
     public GameObject dialogueBox;
     public Text dialogueText;
+    public Text characterName;
 
     public bool dialogueActive;
 
@@ -16,7 +17,8 @@ public class DialogueManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         dialogueActive = false;
-	}
+        dialogueBox.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,10 +47,11 @@ public class DialogueManager : MonoBehaviour {
         dialogueText.text = dialogue;
     }
 
-    public void ShowDialogue (string[] dialogue)
+    public void ShowDialogue (string character, string[] dialogue)
     {
         dialogueActive = true;
         dialogueBox.SetActive(true);
+        characterName.text = character;
         dialogueLines = dialogue;
         currentLine = 0;
     }
