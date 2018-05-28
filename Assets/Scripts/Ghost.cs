@@ -25,7 +25,6 @@ public class Ghost : MonoBehaviour {
         if (collision.gameObject.name == "PlayerLongRange")
         {
             Player player = collision.gameObject.GetComponentInParent<Player>();
-            print(player.inventory.ItemInInventory(cat));
             if (characterName == "Peeves" && player.inventory.ItemInInventory(cat))
             {
                 dialogueLines = new string[3];
@@ -40,7 +39,7 @@ public class Ghost : MonoBehaviour {
     {
         if (collision.gameObject.name == "PlayerMeleeRange")
         {
-            if (!dialogueManager.dialogueActive && Input.GetKeyDown(KeyCode.Space))
+            if (!dialogueManager.dialogueActive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
             {
                 dialogueManager.ShowDialogue(characterName, dialogueLines);
             }

@@ -1596,6 +1596,11 @@ Prefab:
       propertyPath: m_ReferenceResolution.x
       value: 1030
       objectReference: {fileID: 0}
+    - target: {fileID: 114117010361743578, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u25BC"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88cfeca4a7de978499ce5ac6ed84554b, type: 2}
   m_IsPrefabParent: 0

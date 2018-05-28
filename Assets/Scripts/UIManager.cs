@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour {
         energyBar.maxValue = player.maxEnergy;
         energyBar.value = player.currentEnergy;
         energyText.text = "Energy: " + player.currentEnergy + "/" + player.maxEnergy;
-        if(Input.GetKeyDown("i"))
+        if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Q))
         {
             inventory.SetActive(!inventory.activeSelf);
         }

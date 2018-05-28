@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
             }
 
-            if (Input.GetMouseButtonDown(0) && worldIndex == -1)
+            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && worldIndex == -1)
             {
                 attackTimeCounter = attackTime;
                 attacking = true;
