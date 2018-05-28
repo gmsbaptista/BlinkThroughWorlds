@@ -218,6 +218,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e13627c85244f304eb69ee794086b614, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &417431373 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20049771727023366, guid: 3e4c5d13ccdb6d94bb235910cafae86a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1946783585}
 --- !u!1001 &582548541
 Prefab:
   m_ObjectHideFlags: 0
@@ -1344,11 +1349,61 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1525114638595210, guid: 88cfeca4a7de978499ce5ac6ed84554b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1066771026824142, guid: 88cfeca4a7de978499ce5ac6ed84554b, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224231185849429474, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224231185849429474, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224231185849429474, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 202
+      objectReference: {fileID: 0}
+    - target: {fileID: 223277867370029458, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223277867370029458, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 417431373}
+    - target: {fileID: 223277867370029458, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540651190069106, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540651190069106, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540651190069106, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540651190069106, guid: 88cfeca4a7de978499ce5ac6ed84554b,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1030
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88cfeca4a7de978499ce5ac6ed84554b, type: 2}
