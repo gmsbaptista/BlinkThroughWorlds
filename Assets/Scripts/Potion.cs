@@ -5,7 +5,7 @@ using UnityEngine;
 public class Potion : MonoBehaviour {
 
     private int restore;
-    private int baseHealthRestore = 5;
+    private int baseHealthRestore = 15;
     private int baseEnergyRestore = 5;
 
     // Use this for initialization

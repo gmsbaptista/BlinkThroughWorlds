@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -80,6 +81,12 @@ public class Player : MonoBehaviour
             attackTimeCounter -= Time.deltaTime;
         else
             attacking = false;
+
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
 
         animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));

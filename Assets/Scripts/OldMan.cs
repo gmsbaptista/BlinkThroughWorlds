@@ -104,7 +104,7 @@ public class OldMan : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            cat.catFree = true;
+            cat.FreeCat();
             roomDoor.SetActive(false);
             Destroy(gameObject);
         }

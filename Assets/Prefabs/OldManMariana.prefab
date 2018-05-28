@@ -119,14 +119,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  timeBetweenMove: 2
+  timeBetweenMove: 3
   timeToMove: 1
-  timeBetweenDamage: 1
-  timeToDamage: 0.5
+  timeBetweenDamage: 2
+  timeToDamage: 0.6
   maxHealth: 30
   currentHealth: 0
   cat: {fileID: 0}
-  monsterDamage: 0
+  monsterDamage: 7
   damageNumber: {fileID: 1410149889489530, guid: 9289835b8ea203645a2e74e80e127694,
     type: 2}
   roomDoor: {fileID: 0}

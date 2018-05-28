@@ -8,6 +8,8 @@ public class Ghost : MonoBehaviour {
     public string characterName;
     public string[] dialogueLines;
 
+    public Cat cat;
+
 	// Use this for initialization
 	void Start () {
         dialogueManager = FindObjectOfType<DialogueManager>();
@@ -17,6 +19,22 @@ public class Ghost : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "PlayerLongRange")
+        {
+            Player player = collision.gameObject.GetComponentInParent<Player>();
+            print(player.inventory.ItemInInventory(cat));
+            if (characterName == "Peeves" && player.inventory.ItemInInventory(cat))
+            {
+                dialogueLines = new string[3];
+                dialogueLines[0] = "You found my cat!\nThank you so much!!";
+                dialogueLines[1] = "Welcome home, Mr. Fuzzywuzzy!";
+                dialogueLines[2] = "The game is over now, thank you for playing!";
+            }
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
