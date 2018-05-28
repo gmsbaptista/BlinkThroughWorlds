@@ -7,13 +7,17 @@ public class Ghost : MonoBehaviour {
     private DialogueManager dialogueManager;
     public string characterName;
     public string[] dialogueLines;
+    
 
     public Cat cat;
+    public GameObject catSpawn;
+    private bool catSpawned;
 
 	// Use this for initialization
 	void Start () {
         dialogueManager = FindObjectOfType<DialogueManager>();
-	}
+        catSpawned = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,9 +43,16 @@ public class Ghost : MonoBehaviour {
     {
         if (collision.gameObject.name == "PlayerMeleeRange")
         {
+            Player player = collision.gameObject.GetComponentInParent<Player>();
             if (!dialogueManager.dialogueActive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
             {
                 dialogueManager.ShowDialogue(characterName, dialogueLines);
+                if (characterName == "Peeves" && player.inventory.ItemInInventory(cat) && !catSpawned)
+                {
+                    catSpawned = true;
+                    player.inventory.RemoveItem(cat);
+                    Instantiate(catSpawn, new Vector3(transform.position.x + 3, transform.position.y, transform.position.z), Quaternion.Euler(Vector3.zero));
+                }
             }
         }
     }

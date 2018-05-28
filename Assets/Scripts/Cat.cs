@@ -10,7 +10,7 @@ public class Cat : Item {
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
-        catFree = false;
+        //catFree = false;
 	}
 	
 	// Update is called once per frame

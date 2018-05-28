@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i] == null)
+            if (!itemImages[i].enabled)
             {
                 items[i] = itemToAdd;
                 itemImages[i].sprite = itemToAdd.sprite;

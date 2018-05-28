@@ -30,14 +30,23 @@ public class OldMan : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    private float worldCenter;
+
     public Cat cat;
+    public Item bird;
+    public GameObject birdSpawn;
+    private bool birdSpawned;
 
     public int monsterDamage;
 
     public GameObject damageNumber;
 
-    //private bool inCombat = false;
+    private bool alive = true;
     public GameObject roomDoor;
+
+    private DialogueManager dialogueManager;
+    private string characterName;
+    private string[] dialogueLines;
 
     // Use this for initialization
     void Start ()
@@ -48,51 +57,57 @@ public class OldMan : MonoBehaviour
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
         timeBetweenDamageCounter = Random.Range(0f, timeBetweenDamage * 0.5f);
         currentHealth = maxHealth;
+        dialogueManager = FindObjectOfType<DialogueManager>();
+        cat.catFree = false;
+        birdSpawned = false;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (wanderMode)
+        if (alive)
         {
-            if (moving)
+            if (wanderMode)
             {
-                timeToMoveCounter -= Time.deltaTime;
-                //transform.Translate(moveDirection * Time.deltaTime);
-                rigidBody.velocity = moveDirection;
-                lastMove = new Vector2(moveDirection.x, moveDirection.y);
-                if (timeToMoveCounter < 0f)
+                if (moving)
                 {
-                    moving = false;
-                    timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+                    timeToMoveCounter -= Time.deltaTime;
+                    //transform.Translate(moveDirection * Time.deltaTime);
+                    rigidBody.velocity = moveDirection;
+                    lastMove = new Vector2(moveDirection.x, moveDirection.y);
+                    if (timeToMoveCounter < 0f)
+                    {
+                        moving = false;
+                        timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+                    }
+                }
+                else
+                {
+                    timeBetweenMoveCounter -= Time.deltaTime;
+                    rigidBody.velocity = Vector2.zero;
+
+                    if (timeBetweenMoveCounter < 0f)
+                    {
+                        moving = true;
+                        timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
+                        moveDirection = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
+
+                    }
                 }
             }
             else
             {
-                timeBetweenMoveCounter -= Time.deltaTime;
-                rigidBody.velocity = Vector2.zero;
-
-                if (timeBetweenMoveCounter < 0f)
+                if (moving)
                 {
-                    moving = true;
-                    timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
-                    moveDirection = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0f);
-
+                    rigidBody.velocity = moveDirection;
+                    lastMove = new Vector2(moveDirection.x, moveDirection.y);
                 }
-            }
-        }
-        else
-        {
-            if (moving)
-            {
-                rigidBody.velocity = moveDirection;
-                lastMove = new Vector2(moveDirection.x, moveDirection.y);
-            }
-            else
-            {
-                rigidBody.velocity = Vector2.zero;
-            }
+                else
+                {
+                    rigidBody.velocity = Vector2.zero;
+                }
 
+            }
         }
 
         animator.SetFloat("MoveX", moveDirection.x);
@@ -102,18 +117,34 @@ public class OldMan : MonoBehaviour
         animator.SetBool("Moving", moving);
         animator.SetBool("Attacking", attacking);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && alive)
         {
             cat.FreeCat();
             roomDoor.SetActive(false);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            var offset = transform.position.x + worldCenter;
+            transform.position = new Vector3(worldCenter + offset, transform.position.y, transform.position.z);
+            //GetComponent<SpriteRenderer>().color = new Color(112, 213, 255, 182);
+            GetComponent<SpriteRenderer>().color = Color.cyan;
+            alive = false;
+            moving = false;
+            attacking = false;
+            characterName = "Marianus";
+            dialogueLines = new string[2];
+            dialogueLines[0] = "Huh? What happened?";
+            dialogueLines[1] = "Where's my bird?";
+        }
+
+        if (birdSpawned && !alive && !moving)
+        {
+            lastMove = new Vector2(-1f, 0f);
         }
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player" && alive)
         {
             moving = false;
         }
@@ -121,7 +152,7 @@ public class OldMan : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player" && alive)
         {
             moving = true;
         }
@@ -129,26 +160,33 @@ public class OldMan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerLongRange")
+        if (collision.gameObject.name == "PlayerLongRange" && alive)
         {
             wanderMode = false;
             moving = true;
-        }
-        if (collision.gameObject.name == "PlayerMeleeRange")
-        {
+            worldCenter = collision.gameObject.GetComponentInParent<Player>().worldCenter;
             roomDoor.SetActive(true);
+        }
+        else if (collision.gameObject.name == "PlayerLongRange" && !alive)
+        {
+            Player player = collision.gameObject.GetComponentInParent<Player>();
+            if (player.inventory.ItemInInventory(bird))
+            {
+                dialogueLines = new string[1];
+                dialogueLines[0] = "You found my bird!";
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerLongRange")
+        if (collision.gameObject.name == "PlayerLongRange" && alive)
         {
             Player player = collision.gameObject.GetComponentInParent<Player>();
             moveDirection = player.transform.position - transform.position;
             lastMove = new Vector2(moveDirection.x, moveDirection.y);
         }
-        if (collision.gameObject.name == "PlayerMeleeRange")
+        if (collision.gameObject.name == "PlayerMeleeRange" && alive)
         {
             Player player = collision.gameObject.GetComponentInParent<Player>();
             timeBetweenAttack = player.attackTime;
@@ -188,17 +226,46 @@ public class OldMan : MonoBehaviour
                 }
             }
         }
+        else if (collision.gameObject.name == "PlayerMeleeRange" && !alive)
+        {
+            if (!dialogueManager.dialogueActive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+            {
+                Player player = collision.gameObject.GetComponentInParent<Player>();
+                if (!birdSpawned)
+                {
+                    moveDirection = player.transform.position - transform.position;
+                    lastMove = new Vector2(moveDirection.x, moveDirection.y);
+                }
+                dialogueManager.ShowDialogue(characterName, dialogueLines);
+                if (player.inventory.ItemInInventory(bird) && !birdSpawned)
+                {
+                    birdSpawned = true;
+                    player.inventory.RemoveItem(bird);
+                    Instantiate(birdSpawn, new Vector3(transform.position.x - 3, transform.position.y, transform.position.z), Quaternion.Euler(Vector3.zero));
+                }
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerLongRange")
+        if (collision.gameObject.name == "PlayerLongRange" && alive)
         {
             wanderMode = true;
         }
-        if (collision.gameObject.name == "PlayerMeleeRange")
+        if (collision.gameObject.name == "PlayerMeleeRange" && alive)
         {
             attacking = false;
+        }
+        else if (collision.gameObject.name == "PlayerMeleeRange" && !alive)
+        {
+            if (collision.gameObject.name == "PlayerMeleeRange")
+            {
+                if (dialogueManager.dialogueActive)
+                {
+                    dialogueManager.CloseDialogue();
+                }
+            }
         }
     }
 }

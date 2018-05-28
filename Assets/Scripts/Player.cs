@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         //currentEnergy = maxEnergy;
-        currentEnergy = 5;
+        currentEnergy = 8;
     }
 
     // Update is called once per frame
@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
 		currentEnergy -= switchCost;
         var offset = transform.position.x - worldIndex * worldCenter;
         worldIndex /= -1;
-        transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);		
+        transform.position = new Vector3(worldIndex * worldCenter + offset, transform.position.y, transform.position.z);
 	}
 
     public Vector2 Facing()
