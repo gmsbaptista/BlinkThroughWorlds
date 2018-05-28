@@ -33,6 +33,8 @@ public class BetterMonster : MonoBehaviour {
 
     public GameObject damageNumber;
 
+    public GameObject itemToDrop;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -98,6 +100,7 @@ public class BetterMonster : MonoBehaviour {
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            Instantiate(itemToDrop, transform.position, Quaternion.Euler(Vector3.zero));
         }
     }
 

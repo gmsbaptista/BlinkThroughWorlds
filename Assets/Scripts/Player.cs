@@ -35,7 +35,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        currentEnergy = maxEnergy;
+        //currentEnergy = maxEnergy;
+        currentEnergy = 5;
     }
 
     // Update is called once per frame

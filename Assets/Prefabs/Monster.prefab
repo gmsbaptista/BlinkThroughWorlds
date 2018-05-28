@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 50625491016367826}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   monsterDamage: 5
   damageNumber: {fileID: 1410149889489530, guid: 9289835b8ea203645a2e74e80e127694,
     type: 2}
+  itemToDrop: {fileID: 1938521106574198, guid: c7544f438a62d2e40bbb09a4bd614b59, type: 2}
 --- !u!212 &212463786577252814
 SpriteRenderer:
   m_ObjectHideFlags: 1
