@@ -13,6 +13,9 @@ public class OldMan : MonoBehaviour {
     private float timeBetweenAttackCounter = 0f;
     public GameObject damageNumber;
 
+    //private bool inCombat = false;
+    public GameObject roomDoor;
+
     // Use this for initialization
     void Start ()
     {
@@ -25,14 +28,23 @@ public class OldMan : MonoBehaviour {
         if (currentHealth <= 0)
         {
             cat.catFree = true;
+            roomDoor.SetActive(false);
             Destroy(gameObject);
         }
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "PlayerMeleeRange")
+        {
+            roomDoor.SetActive(true);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTrigger")
+        if (collision.gameObject.name == "PlayerMeleeRange")
         {
             Player player = collision.gameObject.GetComponentInParent<Player>();
             Vector3 moveDirection = player.transform.position - transform.position;
