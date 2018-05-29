@@ -13,6 +13,7 @@ public class Door : MonoBehaviour {
             if (collision.gameObject.GetComponent<Player>().inventory.ItemInInventory(key))
             {
                 collision.gameObject.GetComponent<Player>().inventory.RemoveItem(key);
+                Debug.Log("T3 - Door opened: " + Time.time);
                 Destroy(gameObject);
             }
         }

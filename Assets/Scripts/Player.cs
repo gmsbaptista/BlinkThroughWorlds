@@ -28,6 +28,10 @@ public class Player : MonoBehaviour
     public int swordDamage;
     public int switchCost;
 
+    public bool inCombat = false;
+    public bool switchedOnce = false;
+    public int switchCounter = 0;
+
     public Inventory inventory;
 
     // Use this for initialization

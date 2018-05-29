@@ -51,6 +51,7 @@ public class Ghost : MonoBehaviour {
                 {
                     catSpawned = true;
                     player.inventory.RemoveItem(cat);
+                    Debug.Log("T5 - Cat Returned: " + Time.time);
                     Instantiate(catSpawn, new Vector3(transform.position.x + 3, transform.position.y, transform.position.z), Quaternion.Euler(Vector3.zero));
                 }
             }

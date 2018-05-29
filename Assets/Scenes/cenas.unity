@@ -679,6 +679,116 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 738df1422c97e974fa553b19fb0a8a32, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &865679689
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 347
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 202
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224497107470614392, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224405363452359468, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224405363452359468, guid: fdf764afc6e76ba40be82f7d19eb9ad7,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fdf764afc6e76ba40be82f7d19eb9ad7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1007548328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1129,7 @@ Prefab:
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: dialogueLines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4013284347211190, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1085,7 +1195,12 @@ Prefab:
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: characterName
-      value: Balakay
+      value: A'a'ron
+      objectReference: {fileID: 0}
+    - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
+        type: 2}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Welcome to the Spirit World!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
@@ -1207,7 +1322,7 @@ Prefab:
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: dialogueLines.Array.data[1]
-      value: Not a girl... Not a robot...
+      value: I am not a girl... I'm a ghost!
       objectReference: {fileID: 0}
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
@@ -1315,7 +1430,7 @@ Prefab:
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: dialogueLines.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4013284347211190, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1352,12 +1467,12 @@ Prefab:
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: dialogueLines.Array.data[0]
-      value: Old Man Mariana stole my cat :'(
+      value: Old Man Marianus stole my cat...
       objectReference: {fileID: 0}
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: dialogueLines.Array.data[1]
-      value: I think I had a key around here somewhere...
+      value: He locked himself in the big room behind the weird door.
       objectReference: {fileID: 0}
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
@@ -1375,6 +1490,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1759759894787568, guid: d68aa86c1a2301d4b99c6571a4bedccd,
         type: 2}
+    - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
+        type: 2}
+      propertyPath: dialogueLines.Array.data[2]
+      value: I think I had a key around here somewhere...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8a45352ba65c71438222046dadb8a71, type: 2}
   m_IsPrefabParent: 0

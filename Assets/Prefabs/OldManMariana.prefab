@@ -131,6 +131,7 @@ MonoBehaviour:
   monsterDamage: 12
   damageNumber: {fileID: 1410149889489530, guid: 9289835b8ea203645a2e74e80e127694,
     type: 2}
+  healthBar: {fileID: 1838341881321796, guid: fdf764afc6e76ba40be82f7d19eb9ad7, type: 2}
   roomDoor: {fileID: 0}
 --- !u!212 &212485537215886660
 SpriteRenderer:

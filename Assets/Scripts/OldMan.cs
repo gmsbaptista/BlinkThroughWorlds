@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OldMan : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class OldMan : MonoBehaviour
     public int monsterDamage;
 
     public GameObject damageNumber;
+    public GameObject healthBar;
+    private GameObject monsterBar;
 
     private bool alive = true;
     public GameObject roomDoor;
@@ -60,6 +63,10 @@ public class OldMan : MonoBehaviour
         dialogueManager = FindObjectOfType<DialogueManager>();
         cat.catFree = false;
         birdSpawned = false;
+        monsterBar = (GameObject)Instantiate(healthBar, transform.position, Quaternion.Euler(Vector3.zero));
+        monsterBar.GetComponentInChildren<Slider>().maxValue = maxHealth;
+        monsterBar.GetComponentInChildren<Slider>().value = currentHealth;
+        monsterBar.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -117,11 +124,19 @@ public class OldMan : MonoBehaviour
         animator.SetBool("Moving", moving);
         animator.SetBool("Attacking", attacking);
 
+        if (alive && monsterBar.activeInHierarchy)
+        {
+            monsterBar.transform.position = new Vector3(transform.position.x, transform.position.y - 0.7f, transform.position.z);
+            monsterBar.GetComponentInChildren<Slider>().maxValue = maxHealth;
+            monsterBar.GetComponentInChildren<Slider>().value = currentHealth;
+        }
+
         if (currentHealth <= 0 && alive)
         {
             cat.FreeCat();
             roomDoor.SetActive(false);
             //Destroy(gameObject);
+            Destroy(monsterBar);
             var offset = transform.position.x + worldCenter;
             transform.position = new Vector3(worldCenter + offset, transform.position.y, transform.position.z);
             //GetComponent<SpriteRenderer>().color = new Color(112, 213, 255, 182);
@@ -133,6 +148,7 @@ public class OldMan : MonoBehaviour
             dialogueLines = new string[2];
             dialogueLines[0] = "Huh? What happened?";
             dialogueLines[1] = "Where's my bird?";
+            Debug.Log("T4 - Boss defeated: " + Time.time);
         }
 
         if (birdSpawned && !alive && !moving)
@@ -166,6 +182,7 @@ public class OldMan : MonoBehaviour
             moving = true;
             worldCenter = collision.gameObject.GetComponentInParent<Player>().worldCenter;
             roomDoor.SetActive(true);
+            collision.gameObject.GetComponentInParent<Player>().inCombat = true;
         }
         else if (collision.gameObject.name == "PlayerLongRange" && !alive)
         {
@@ -175,6 +192,10 @@ public class OldMan : MonoBehaviour
                 dialogueLines = new string[1];
                 dialogueLines[0] = "You found my bird!";
             }
+        }
+        if (collision.gameObject.name == "PlayerMeleeRange" && alive)
+        {
+            monsterBar.SetActive(true);
         }
     }
 
@@ -237,7 +258,7 @@ public class OldMan : MonoBehaviour
                     lastMove = new Vector2(moveDirection.x, moveDirection.y);
                 }
                 dialogueManager.ShowDialogue(characterName, dialogueLines);
-                if (player.inventory.ItemInInventory(bird) && !birdSpawned)
+                if (player.inventory.ItemInInventory(bird))
                 {
                     birdSpawned = true;
                     player.inventory.RemoveItem(bird);
@@ -252,10 +273,16 @@ public class OldMan : MonoBehaviour
         if (collision.gameObject.name == "PlayerLongRange" && alive)
         {
             wanderMode = true;
+            collision.gameObject.GetComponentInParent<Player>().inCombat = false;
+        }
+        else if (collision.gameObject.name == "PlayerLongRange" && !alive)
+        {
+            collision.gameObject.GetComponentInParent<Player>().inCombat = false;
         }
         if (collision.gameObject.name == "PlayerMeleeRange" && alive)
         {
             attacking = false;
+            monsterBar.SetActive(false);
         }
         else if (collision.gameObject.name == "PlayerMeleeRange" && !alive)
         {

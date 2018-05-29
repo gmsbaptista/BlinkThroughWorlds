@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BetterMonster : MonoBehaviour {
 
@@ -32,7 +34,8 @@ public class BetterMonster : MonoBehaviour {
     public int monsterDamage;
 
     public GameObject damageNumber;
-
+    public GameObject healthBar;
+    private GameObject monsterBar;
     public GameObject itemToDrop;
 
 	// Use this for initialization
@@ -44,6 +47,10 @@ public class BetterMonster : MonoBehaviour {
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
         timeBetweenDamageCounter = Random.Range(0f, timeBetweenDamage * 0.5f);
         currentHealth = maxHealth;
+        monsterBar = (GameObject)Instantiate(healthBar, transform.position, Quaternion.Euler(Vector3.zero));
+        monsterBar.GetComponentInChildren<Slider>().maxValue = maxHealth;
+        monsterBar.GetComponentInChildren<Slider>().value = currentHealth;
+        monsterBar.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -97,9 +104,17 @@ public class BetterMonster : MonoBehaviour {
         animator.SetBool("Moving", moving);
         animator.SetBool("Attacking", attacking);
 
+        if (monsterBar.activeInHierarchy)
+        {
+            monsterBar.transform.position = new Vector3(transform.position.x, transform.position.y-0.7f, transform.position.z);
+            monsterBar.GetComponentInChildren<Slider>().maxValue = maxHealth;
+            monsterBar.GetComponentInChildren<Slider>().value = currentHealth;
+        }
+
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            Destroy(monsterBar);
             Instantiate(itemToDrop, transform.position, Quaternion.Euler(Vector3.zero));
         }
     }
@@ -126,6 +141,11 @@ public class BetterMonster : MonoBehaviour {
         {
             wanderMode = false;
             moving = true;
+            collision.gameObject.GetComponentInParent<Player>().inCombat = true;
+        }
+        if (collision.gameObject.name == "PlayerMeleeRange")
+        {
+            monsterBar.SetActive(true);
         }
     }
 
@@ -184,10 +204,12 @@ public class BetterMonster : MonoBehaviour {
         if (collision.gameObject.name == "PlayerLongRange")
         {
             wanderMode = true;
+            collision.gameObject.GetComponentInParent<Player>().inCombat = false;
         }
         if (collision.gameObject.name == "PlayerMeleeRange")
         {
             attacking = false;
+            monsterBar.SetActive(false);
         }
     }
 }

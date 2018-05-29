@@ -15,6 +15,10 @@ public class Item : MonoBehaviour {
             if (!inventory.IsFull())
             {
                 inventory.AddItem(this);
+                if (gameObject.name == "Key")
+                {
+                    Debug.Log("T2 - Key picked up: " + Time.time);
+                }
                 Destroy(gameObject);
             }
         }

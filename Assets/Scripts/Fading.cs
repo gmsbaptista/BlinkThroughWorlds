@@ -16,9 +16,16 @@ public class Fading : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {		
-		if ((Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftShift)) && player.CanSwitch() && player.currentEnergy >= player.switchCost)
+		if ((Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftShift)) && player.CanSwitch() && player.currentEnergy >= player.switchCost && !player.inCombat)
         {
+            if (!player.switchedOnce)
+            {
+                Debug.Log("T1 - First switch: " + Time.time);
+                player.switchedOnce = true;
+            }
             StartCoroutine(FadePanel(fade, fade.alpha, 1));
+            player.switchCounter++;
+            Debug.Log("Switch Counter: " + player.switchCounter);
         }		
 	}
 
