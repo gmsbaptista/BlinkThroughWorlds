@@ -1383,7 +1383,7 @@ Prefab:
     - target: {fileID: 114115239620281916, guid: e8a45352ba65c71438222046dadb8a71,
         type: 2}
       propertyPath: dialogueLines.Array.data[2]
-      value: I think I had a key around here somewhere...
+      value: I think I had a key around here somewhere, when I was alive...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8a45352ba65c71438222046dadb8a71, type: 2}

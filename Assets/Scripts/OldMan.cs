@@ -51,6 +51,8 @@ public class OldMan : MonoBehaviour
     private string characterName;
     private string[] dialogueLines;
 
+    private Player player;
+
     // Use this for initialization
     void Start ()
     {
@@ -137,6 +139,7 @@ public class OldMan : MonoBehaviour
             roomDoor.SetActive(false);
             //Destroy(gameObject);
             Destroy(monsterBar);
+            player.inCombat = false;
             var offset = transform.position.x + worldCenter;
             transform.position = new Vector3(worldCenter + offset, transform.position.y, transform.position.z);
             //GetComponent<SpriteRenderer>().color = new Color(112, 213, 255, 182);
@@ -183,6 +186,7 @@ public class OldMan : MonoBehaviour
             worldCenter = collision.gameObject.GetComponentInParent<Player>().worldCenter;
             roomDoor.SetActive(true);
             collision.gameObject.GetComponentInParent<Player>().inCombat = true;
+            player = collision.GetComponentInParent<Player>();
         }
         else if (collision.gameObject.name == "PlayerLongRange" && !alive)
         {
@@ -221,7 +225,7 @@ public class OldMan : MonoBehaviour
                 {
                     currentHealth -= player.swordDamage;
                     var clone = (GameObject)Instantiate(damageNumber, transform.position, Quaternion.Euler(Vector3.zero));
-                    clone.GetComponent<FloatingNumbers>().damageNumber = player.swordDamage;
+                    clone.GetComponent<FloatingNumbers>().damageNumber = -player.swordDamage;
                     timeBetweenAttackCounter = timeBetweenAttack;
                 }
             }
@@ -242,7 +246,8 @@ public class OldMan : MonoBehaviour
                     attacking = true;
                     player.currentHealth -= monsterDamage;
                     var clone = (GameObject)Instantiate(damageNumber, player.transform.position, Quaternion.Euler(Vector3.zero));
-                    clone.GetComponent<FloatingNumbers>().damageNumber = monsterDamage;
+                    clone.GetComponent<FloatingNumbers>().damageNumber = -monsterDamage;
+                    clone.GetComponentInChildren<Text>().color = Color.red;
                     timeToDamageCounter = timeToDamage;
                 }
             }
@@ -273,11 +278,11 @@ public class OldMan : MonoBehaviour
         if (collision.gameObject.name == "PlayerLongRange" && alive)
         {
             wanderMode = true;
-            collision.gameObject.GetComponentInParent<Player>().inCombat = false;
+            //collision.gameObject.GetComponentInParent<Player>().inCombat = false;
         }
         else if (collision.gameObject.name == "PlayerLongRange" && !alive)
         {
-            collision.gameObject.GetComponentInParent<Player>().inCombat = false;
+            //collision.gameObject.GetComponentInParent<Player>().inCombat = false;
         }
         if (collision.gameObject.name == "PlayerMeleeRange" && alive)
         {
