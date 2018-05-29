@@ -171,7 +171,7 @@ public class BetterMonster : MonoBehaviour {
                 {
                     currentHealth -= player.swordDamage;
                     var clone = (GameObject)Instantiate(damageNumber, transform.position, Quaternion.Euler(Vector3.zero));
-                    clone.GetComponent<FloatingNumbers>().damageNumber = player.swordDamage;
+                    clone.GetComponent<FloatingNumbers>().damageNumber = -player.swordDamage;
                     timeBetweenAttackCounter = timeBetweenAttack;
                 }
             }
@@ -192,7 +192,8 @@ public class BetterMonster : MonoBehaviour {
                     attacking = true;
                     player.currentHealth -= monsterDamage;
                     var clone = (GameObject)Instantiate(damageNumber, player.transform.position, Quaternion.Euler(Vector3.zero));
-                    clone.GetComponent<FloatingNumbers>().damageNumber = monsterDamage;
+                    clone.GetComponent<FloatingNumbers>().damageNumber = -monsterDamage;
+                    clone.GetComponentInChildren<Text>().color = Color.red;
                     timeToDamageCounter = timeToDamage;
                 }
             }
