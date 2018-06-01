@@ -44,7 +44,9 @@ public class Ghost : MonoBehaviour {
         if (collision.gameObject.name == "PlayerMeleeRange")
         {
             Player player = collision.gameObject.GetComponentInParent<Player>();
-            if (!dialogueManager.dialogueActive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+            Vector3 moveDirection = player.transform.position - transform.position;
+            Vector2 lastMove = new Vector2(moveDirection.x, moveDirection.y);
+            if (!dialogueManager.dialogueActive && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && (Vector2.Angle(player.Facing(), -lastMove) < 50f))
             {
                 dialogueManager.ShowDialogue(characterName, dialogueLines);
                 if (characterName == "Peeves" && player.inventory.ItemInInventory(cat) && !catSpawned)

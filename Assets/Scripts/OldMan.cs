@@ -263,11 +263,12 @@ public class OldMan : MonoBehaviour
                     lastMove = new Vector2(moveDirection.x, moveDirection.y);
                 }
                 dialogueManager.ShowDialogue(characterName, dialogueLines);
-                if (player.inventory.ItemInInventory(bird))
+                if (player.inventory.ItemInInventory(bird) && !birdSpawned)
                 {
                     birdSpawned = true;
                     player.inventory.RemoveItem(bird);
-                    Instantiate(birdSpawn, new Vector3(transform.position.x - 3, transform.position.y, transform.position.z), Quaternion.Euler(Vector3.zero));
+                    var clone = (GameObject)Instantiate(birdSpawn, new Vector3(transform.position.x - 3, transform.position.y, transform.position.z), Quaternion.Euler(Vector3.zero));
+                    clone.GetComponent<Item>().BirdPickUp();
                 }
             }
         }
